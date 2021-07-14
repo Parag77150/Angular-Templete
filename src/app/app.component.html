@@ -1,0 +1,31 @@
+<h1>Forms</h1>
+<form #userpost='ngForm' (ngSubmit)='onSubmit(userpost.value)'>
+  <input type="text" name="id" ngModel placeholder="id"> <br>
+  <input type="text" name="name" ngModel placeholder="name"> <br>
+  <input type="text" name="email" ngModel placeholder="email"> <br>
+  <input type="text" name="gender" ngModel placeholder="gender"> <br>
+  <button type="submit">Submit Data</button>
+  <nav class="navbar">
+    <input class="form-control" type="text" name="name" [(ngModel)]='name' (ngModelChange)="search()" placeholder="Enter name to search">
+  </nav>
+ <table class="table of table-border">
+   <thead>
+     <tr>
+       <th>UserId</th>
+       <th>Name</th>
+       <th>Email id</th>
+       <th>Gender</th>
+     </tr>
+   </thead>
+ 
+
+ 
+  <tbody>
+    <tr *ngFor="let student of student">
+        <td>{{student.id}}   </td>   
+        <td>{{student.name}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.gender}}</td>
+    </tr>
+  </tbody>
+</table>
